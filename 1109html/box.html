@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box css</title>
+  <style>
+    #box1 {
+      width: 200px;
+      height: 200px;
+      margin: 10px auto;
+      background-color: #a4a434;
+      box-shadow: 20px 5px 40px #000;
+    }
+    #box2 {
+      width: 200px;
+      height: 200px;
+      margin: 15px auto;
+      background-color: gray;
+      box-shadow: 1px 5px 5px 2px #555;
+    }
+    #box3{
+      width: 200px;
+      margin: 100px auto;
+      box-shadow: 3px 2px 4px 3px gray;
+      border-radius: 10px;
+    }
+    .image{
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .image img{
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1);
+      transition: all 700ms ease-in-out;
+    }
+    .image img:hover {
+      transform: scale(1.1);
+    }
+    .detail{
+      position: relative;
+      border-top: 3.5px solid rgb(160, 187, 243);
+      text-align: center;
+      padding: 15px 0;
+      font-weight: 700;
+    }
+    .cap{
+      position: absolute;
+      top: -16.7px;
+      left: 50%;
+      transform: translate(-50%);
+      width: 80px;
+      line-height: 30px;
+      background-color: rgb(160,187,243);
+      border-radius: 30px;
+      font-style: italic;
+      color: #fff;
+    }
+    .detail-text{ margin: 10px 0 5px 0;}
+    
+   
+    
+  </style>
+</head>
+
+<body>
+  <div id="box1"></div>
+  <div id="box2"></div>
+  <div id="box3">
+    <div class="image">
+      <img src="./static/images/도라에몽.png" alt="도라에몽이미지">
+    </div>
+
+    <div class="detail">
+      <div class="cap">Card</div>
+      <p class="detail-text">도라에몽 </p>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<!-- transform : 텍스트,이미지,도형,영상 등에 변화를 주기 위한 속성
+                 기울기,크기,회전,이동 효과를 부여 할 수 있다. 
+
+     trasntiton 사용할때는 반드시 처음 상태값과 변화된 마지막값을 알려줘야한다.
+     박스의 너비가 변화는 과정을 transtiton으로 표현한다면 처음 너비가 얼마인지 값이 있어야하고
+     변경된 너비값도 있어야한다.
+
+     transition : 상태의 변화를 동적으로 표현
+                  지정한 시간에 맞춰 변화되는 과정을 표현       
+                  
+     transition-delay : 시간 설정 초단위(s), transition 효과가 시작하기전에 대기 시간          
+     transition-duration : 시간 설정 초단위(s) transition효과가 진행되는 시간
+     transition-property : 변화되는 css속성 지정(예, width, height, left, top, right, background등)
+                           모든 css 속성 지정은 all이다.
+     transition-timing-function : transtiton 효과가 속도 설정
+                                  ease, ease-in, ease-out, ease-in-out, linear step-end                      
+-->

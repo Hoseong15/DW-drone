@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li{
+  list-style: none;
+}
+img{
+  width: 100%;
+}
+#wrap{
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+}
+#header{
+  width: 100%;
+  padding: 15px 0;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 25px;
+  font-family: 700;
+}
+.logo{
+  width: 80px;
+}
+.logo img{
+  /* block일 경우만 적용 */
+  vertical-align: middle;
+}
+.menuList{
+  display: flex;
+  justify-content: space-between;
+  width: calc( 100% - 80px - 30px ); 
+  /*nav전체너비 - 로고너비- 로고와메뉴간격*/
+}
+#main{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.picBox{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  order: 2;
+}
+.pic{
+  width: calc(100% / 3 - 10px);
+}
+.notice{
+  /* order : html에서 순서를 바꿀수 있다
+  order의 값이 작을수록 위에 배치, order값이 업슨
+  flexItem이  위에 배치된다.
+  */
+  order: 1;
+}

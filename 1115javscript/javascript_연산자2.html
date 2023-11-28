@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    // 논리연산자 //
+    // 참(true), 거짓(false)을 연산하는 연산자
+    // and(&&) , or(||) , not(!) 
+    // && => 무조건 참 과 거짓이 맞아야함 ,곱하기 ,
+    // || => 참 과 거짓중 하나만 맞으면됨 , 더하기
+    // ! =>  
+
+    // (a > 50) && (b > 10) && ((c < 20) || (d > 40)); 이런식으로 작성하면 || 먼저 작동
+
+    // 세개의 정수 중 큰수출력, 세개가 모두 같으면 같다 출력
+
+    // var num1 = parseInt(prompt('정수입력'));
+    // var num2 = parseInt(prompt('정수입력'));
+    // var num3 = parseInt(prompt('정수입력'));
+
+    // var result = (num1 > num2) ? num1 : num2;
+    // result = (result > num3) ? result : num3;
+    // result = (num1 === num2) && (num2 === num3) ? "모두 같다" : result;
+    // console.log(result);
+
+    // and연산자는 여러개의 조건을 만들어야 되는 경우에 조건 사이사이에 
+    // 그리고를 넣어서 표현했을 때 자연스러워야한다.
+    // 심부름으로 소금, 고추장을 사오라고 했다면 심부름을 잘 마치려면 소금하고 고추장을 사와야한다.
+    //      소금하고(그리고) 고추장
+
+    // or연산자는 여러개의 조건을 사용해서 만들어야하는 경우에 조건 사이사이에 또는을 넣어서 표현했을 때 자연스러워야한다
+    // 심부름으로 간장이나 액젓을 사오라고 했다면 
+    // 간장 또는 액젓 둘중에 하나만 사가면된다.
+
+    // 야바위 만들기
+    // 종이컵이 세개가 있다. 세개의 종이컵을 하군데에만 주사위가 들어있다.
+    // 주사위가 들어있는 종이컵을 맞추면 2배
+    // 주사위 위치도 맞추고 주사위 값도 맞추면 6배
+    // 주사위는 사면체이다.
+
+    // var dealar = parseInt(Math.random() * 3) + 1 ;
+    // var dice = parseInt(Math.random() * 4) + 1 ;
+    
+    // var userCup = parseInt(prompt("몇번째 종이컵을 선택?"));
+    // var user_dice = parseInt(prompt("주사위 값은?"));
+
+    // // (dealar === userCup) ? "2배" : "꽝";
+    // // (dice === user_dice) ? "6배" : "꽝";
+
+    // var result = (dealar == userCup && dice == user_dice) ? "6배" : (dealar == userCup) ? "2배" : "꽝";  
+    // console.log(result);
+    
+    // 가위 바위 보!! 
+    // 1.가위 2.바위 3.보
+
+    // var com = parseInt(Math.random()*3)+1;
+    // var user = parseInt(prompt("1.가위 2.바위 3.보"));
+
+    // // var result = (com == user) ? "비겼음" 
+    // // : (com == 1 && user == 2) || (com == 2 && user == 3) || (com == 3 && user == 1)
+    // // ? "이김" : "졌음"; 
+
+    // var cl = user - com;
+    // var result = (cl == 0) ? "비김" : (cl == 1 || cl == -2 ) ? "이김" : "졌다";
+    // console.log(result);
+
+    // document.write("<div class=red>sdsdsd</div>")
+    // 문자열 비교하기 a === "사각형"
+    // 1. 사각형의 색상을 입력하세요(빨강,노랑,파랑)
+    // 2. 크기를 입력하세요(1,2,3) 1- 100,100  2- 200,200  3- 300,300
+
+    // var box = prompt("사각형의 색상을 입력하세요")
+    // var tex = prompt("크기를 입력하세요");
+    
+    // var result = (box === "빨강" && tex === '1') ? document.write("<div class=red one>빨강100</div>") 
+    // : (box === "빨강" && tex === "2") ? document.write("<div class=red two>빨강200</div>") 
+    // : (box === "빨강" && tex === "3") ? document.write("<div class=red three>빨강300</div>") 
+    // : (box === "파랑" && tex === "1") ? document.write("<div class=blue one>파랑100</div>") 
+    // : (box === "파랑" && tex === "2") ? document.write("<div class=blue two>파랑200</div>") 
+    // : (box === "파랑" && tex === "3") ? document.write("<div class=blue three>파랑300</div>") 
+    // : (box === "노랑" && tex === "1") ? document.write("<div class=yellow one>노랑100</div>") 
+    // : (box === "노랑" && tex === "2") ? document.write("<div class=yellow two>노랑200</div>") 
+    // : (box === "노랑" && tex === "3") ? document.write("<div class=yellow three>노랑300</div>") 
+    // : "";
+
+    // var className = (box === "빨강" && tex === "1") ? "red one" :
+    //     (box === "빨강" && tex === "2") ? "red two" :
+    //     (box === "빨강" && tex === "3") ? "red three" :
+    //     (box === "노랑" && tex === "1") ? "yellow one" :
+    //     (box === "노랑" && tex === "2") ? "yellow two" :
+    //     (box === "노랑" && tex === "3") ? "yellow three" :
+    //     (box === "파랑" && tex === "1") ? "blue one" :
+    //     (box === "파랑" && tex === "2") ? "blue two" :
+    //     (box === "파랑" && tex === "3") ? "blue three" : "";
+
+    // document.write(`<div class='${className}'></div>`)
+
+    // 조건연산자 - 조건식의 결과에 따른 동작을 간단하게 구현할때 사용
+    // a != 0 ? 100 : 0;
+    // 조건문 if , switch
+
+    // if문 - 조건식의 참 , 거짓에 따라 내용이 실행된다.
+    
+    // let num = 5;
+    // if(num > 10) {
+    //   document.write(true);
+    // } else{
+    //   console.log(false);
+    // }
+
+    // 놀이기구 탑승조건 키가 130이상 
+    // var tall = 150;
+    
+    // if(tall > 130) {
+    //   console.log('탑승가능')
+    // } else{
+    //   console.log('탑승 불가능')
+    // }
+    // if(조건식) {조건식이 참일경우 내용} else(거짓일경우 내용)
+
+    // 두개의 정수를 입력 방아 가장 적은 숫자만 출력 // 
+
+    // var num1 = parseInt(prompt("정수입력"));
+    // var num2 = parseInt(prompt("정수입력"));
+
+    // if(num1 > num2) {
+    //   console.log(num2);
+    // } else if(num1 === num2) {
+    //   console.log('같은데?');
+    // } else {
+    //   console.log(num1);
+    // }
+
+    // prompt("다음 추가 등록을 하기겠습니까(y/n)")
+    // y 입력시 - 추가등록을 시작합니다. 출력
+    // n 입력시 - 등록을 종료합니다.
+
+    // var txt = prompt("다음 추가 등록을 하시겠습니까(y/n)");
+
+    // if(txt === 'y' || txt === 'Y') {
+    //   document.write('추가등록을 시작합니다');
+    // } else if(txt === 'n' || txt === 'N') {
+    //   document.write('등록을 종료합니다');
+    // } else{
+    //   document.write("제대로 입력해라!");
+    // }
+  
+  </script>
+  
+  <style>
+   /* .red{background-color: red;}
+   .yellow{background-color: yellow;}
+   .blue{background-color: blue;}
+   .one{width: 100px; height: 100px;}
+   .two{width: 200px; height: 200px;}
+   .three{width: 300px; height: 300px;} */
+  </style>
+  
+</head>
+<body>
+</body>
+</html>

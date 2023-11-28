@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <script>
+    // for(let i = 1; i <= 10; i++) {
+    //   document.write(i + "");
+    // }
+    // document.write("<br>")
+
+    // var i = 1;
+    // while(i <=10) {
+    //   document.write(i + "");
+    //  i++;
+    // }
+
+    // for문 - 반복횟수가 정해진 경우에 사용
+    // while문 - 반복횟수가 정해지지않은 경우에 사용
+    // for(;true;) {}
+    // while(true){}
+
+    //구구단 출력하기
+    //for(let i = 1; i <=9; i++)
+    //document.write(`5 * ${i} = ${5 * i} <br>`)
+    // var i = 1;
+    // while(i <=9) {
+    //   document.write(`5 * ${i} = ${5*i} <br>`)
+    //   i++
+    // }
+
+    // var sum = 0,       
+    // i   = 1; 
+    // while(i <= 10) {
+    //   sum += i;    i++;
+    // }
+    // document.write(`${sum}`)
+
+    // for(let i = 1; i <= 3; i++) {
+    //   for(let k = 1; k <=2; k++) {
+    //     document.write(`${i}   ${k}<br>`)
+    //   }
+    // }
+    // var i = 1, k=1;
+    // while(i <=3) {
+    //   k=1;
+    //   while(k<=2) {
+    //     document.write(`${i}   ${k}<br>`)
+    //     k++
+    //   }
+    //   i++;
+    // }
+
+    // 지금 현재 시점에서 반복문 구구단 2단부터 9단까지 출력하는거
+    // for문과 while문으로 구현하고 어떻게 동작하는지 이해된다면
+    // 반복문 기초는 끝!! 나머지는 응용!!
+
+    // for(let i = 1; i<=9; i++) {
+    //   for(let k= 1; k <=9; k++) {
+    //     document.write(`${i} * ${k} = ${i*k}<br>`)
+    //   }
+    // }
+    // var i =2, k = 1;
+    // while(i <= 9) {
+    //   k=1;
+    //   while(k <=9) {
+    //     document.write(`${i} * ${k} = ${i * k}<br>`);
+    //     k++
+    //   }
+    //   i++
+    // };
+
+
+    //  for(;;) { 
+    //   var num = parseInt(prompt("숫자입력"));
+    //    if(num === 0) {
+    //      break;
+    //   }
+    // };
+    // while(true) {
+    //   var num = parseInt(prompt("숫자입력"));
+    //   if(num === 0) {
+    //     break;
+    //   }
+    // }
+
+    // var word = "요즘날씨가 많이 추워졌죠?"
+    // var len = word.length;
+    // while(len != -1){
+    //   document.write(word.charAt(len--));
+    // }
+
+    // 베스킨라빈스 31게임
+    // 31입력하면 패배
+    // 입력할 수 있는 숫자의 갯수는 최대 3개
+    // 몇개의 숫자를 제시할꺼냐를 입력받아서 진행
+
+    // var user = 0;
+    // var com = 0;
+    // var num = 1;
+    // var flag = false; // 게임을 끝내기 위한 변수
+
+    // while (true) {
+    //   var out = ""; //화면에 진행 내용을 저장할 변수
+    //   user = parseInt(prompt("숫자 몇개?"));
+    //   out += "나 : ";
+    //   for (var u = 1; u <= user; u++) {
+    //     out += `${num++}`
+    //     if(num > 31){out += "패배"; flag = true; break;}
+    //   }
+    //   out += "\n";
+    //   alert(out);
+    //   if(flag) break;
+    //   com = Math.floor(Math.random() * 3) + 1;
+    //   out = "컴 : ";
+    //   for (var c = 1; c <= com; c++) {
+    //     out += `${num++}`;
+    //     if(num > 31) {out += "패배"; flag = true; break;}
+    //   }
+    //   out += "\n";
+    //   alert(out);
+    //   if(flag)break;
+    // }
+
+    // do-while;
+    // for,while 동작순서
+    //  초기값 -> 조건식 비교 -> 침이라면 -> {내용} -> 증감식
+    //        -> 조건식 비교 -> 참 -> {내용} -> 증감식 -> 조건식비교 -> 참 -> ...
+    //        -> 조건식 비교 -> 거짓이라면 -> 반복문 종료
+    // do-while 초기값 -> {내용} -> 증감식 -> 조건식 비교 -> 
+    // for(var i = 10; i < 5; i++) {
+    //   document.write(i + "for문 ");
+    // }
+
+    // var i=10;
+    // do{
+    //   document.write(i + "do-while ");
+    // } while(i <= 5);
+
+    // for(; !(user > 1 && user<=50);){
+    //   user=parseInt(prompt("1~50입력"))
+    // }
+
+    // var user = 0;
+    // do{
+    //   user = parseInt(prompt("1~50입력"))
+    // }while(!(user > 1 && user <= 50));
+
+    // 숫자 맞추기
+    // 숫자를 총 세개를 입력한다.
+    // 입력한 숫자를 랜덤으로 일치하는 숫자 찾기
+    // function find() {
+    //   let num1 = Number($("#num1").val());
+    //   let num2 = Number($("#num2").val());
+    //   let num3 = Number($("#num3").val());
+
+    //   var count = 0;
+
+    //   while(true) {
+    //     var ok = 0; // 숫자 하나씩 일치 할때마다 값증가, 3이되면 3개 숫자모두 일치
+    //     var a = Math.floor(Math.random()*45)+1;
+    //     var b = Math.floor(Math.random()*45)+1;
+    //     var c = Math.floor(Math.random()*45)+1;
+    //     if(num1 == a || num1 == b || num1 == c)
+    //       ok++;
+    //     if(num2 == a || num2 == b || num2 == c)
+    //       ok++;
+    //     if(num3 == a || num3 == b || num3 == c)
+    //       ok++;
+    //     count++; // 세개 숫자에 대해 일치여부를 검사했으니 카운팅 1씩 증가
+    //     if(ok == 3) {
+    //       $("#result").html(`세개 숫자 일치까지 <b>${count}</b>번 동작`)
+    //       break;
+    //     }
+    //   }
+    // }
+
+    /*
+    이번 문제는 혼자 아니고 팀으로 문제풀기
+    2문제중 하나를 선택해서 풀면된다.
+
+    문제 1. 비밀번호 찾기 
+    비밀번호 4개 숫자를 다음조건에 맞게 찾으세요
+    1. 각 숫자는 1~9사이의 값이다.
+    2. 4개 숫자는 중복이 없다.
+    3. 1번쨰 숫자는 4번쨰 숫자보다 2만큼 크다.
+    4. 2번째 숫자는 3번째 숫자보다 작다.
+    5. 비밀번호 숫자 + 비밀번호역순 숫자의 합은 16896이다.
+      예) 1234라면 1234+4321 
+    
+    문제 2. 숫자 야구게임
+    랜덤값으로 3개의 숫자 뽑아내기(중복없음)
+    랜덤 범위는 1-9
+    랜덤숫자 3개 맞출때까지 계속 3개의 숫자를 입력하기
+    랜덤 숫자가 8 3 5 라면
+    1,3,5를 입력시 출력 되는 내용은 1스트라이크 0볼 2아웃
+    2,8,6을 입력시 출력 되는 내용은 0스트라이크 1볼 2아웃
+    */
+
+    // for(var a=1; a<=9; a++) {
+    //   for(var b=1; b <=9; b++) {
+    //     for(var c=1; c <=9; c++){
+    //       for(var d=1; d <=9; d++) {
+    //         if(a!=b&&a!=c&&a!=d&&b!=c&&b!=d&&c!=d){
+    //           if(a == d+2) {
+    //             if(b<c) {
+    //               var num = a*1000+b*100+c*10+d
+    //               var temp = d*1000+c*100+b*10+a;
+    //               if(num + temp == 16896) {
+    //                 console.log(num)
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    // var b1 = Math.floor(Math.random()*9)+1;
+    // var b2 = 0, b3=0;
+    // while( (b1 ==b2 || b1==b3 || b2==b3) ){
+    //   b2= Math.floor(Math.random()*9)+1;
+    //   b3= Math.floor(Math.random()*9)+1;
+    // }
+
+    // var show = "";
+
+    // function find() {
+    //   var n1 = Number($("#num1").val());
+    //   var n2 = Number($("#num2").val());
+    //   var n3 = Number($("#num3").val());
+    //   var str = 0, ball = 0;
+    //   if(n1 == b1 ) str++;
+    //   if(n2 == b2) str++;
+    //   if(n3 == b3) str++;
+    //   if(n1 == b2 || n1 == b3) ball++;
+    //   if(n2 == b1 || n2 == b3) ball++;
+    //   if(n3 == b1 || n3 == b2) ball++;
+    //   show += `${n1} ${n2} ${n3}  결과는 : ${str}스트라이크 ${ball}볼 ${3-str-ball}아웃 <br>`;
+    //   if(str === 3) show += "정답!!!";
+    //   $("#result").html(show);
+    // }
+
+    /*
+    과제 !! 
+    인구조사
+    가족구성원의 나이를 입력하기 prompt로 입력
+    0을 입력하면 더이상 입력 처리가 안된다.
+
+    입력이 끝나면 결과 출력
+    노인 : 65세 이상
+    성인 : 20세 64세
+    청소년 : 8세 ~ 19세
+    아동 : 1세 ~ 7세
+
+    총 가족구성원 : 노인2명, 성인 5명, 청소년2명, 아동 3명
+    */
+
+    // let total = 0;
+    // let CountA = 0;
+    // let CountB = 0;
+    // let CountC = 0;
+    // let CountD = 0;
+
+    // while (total < 10) {
+    //     let age = prompt(`가족 구성원의 나이를 입력하세요 ${total +1}/10 `);
+    //     if (age === '0') {
+    //         alert("끝났음!");
+    //         break;
+    //     }
+    //     age = parseInt(age);
+
+    //     if (age >= 65  ) {
+    //       CountA++;
+    //     } else if (age < 65 && age >= 20  ) {
+    //       CountB++;
+    //     } else if (age < 20 && age >= 8   ) {
+    //       CountC++;
+    //     } else if (age < 8 && age >= 1) {
+    //       CountD++;
+    //     } else {
+    //       document.write("다시 입력해주세요");
+    //     }
+    //     total++;
+    // }
+
+    // document.write(`총원 ${total}명: 노인 ${CountA}명, 성인 ${CountB}명, 청소년 ${CountC}명, 아동 ${CountD}명`);
+
+    var total = 0, old = 0, adult = 0, teen = 0, child = 0;
+
+    var end = true;  // 구성원나이를 입력 가능 또는 입력 불가능하게 만들기위한 변수
+
+    function survey() {
+      if (end) {
+        let age = Number($("#age").val());
+        if (age >= 65) old++;
+        else if (age >= 20 && age < 64) adult++;
+        else if (age >= 8 && age < 20) teen++;
+        else if (age >= 1 && age < 8) child++;
+        else if (age === 0) {
+          end = false;
+          total--;
+        }
+        total++;
+        $("#result").html(
+          `총원 ${total}명 : 노인${old}명 , 성인${adult}명, 청소년${teen}명, 아동${child}명`
+        )
+      }
+    }
+
+    // linter도구 자바스크립트 스타일 가이드를 얼마나 준수 작성 확인 및 개선,제안
+
+  </script>
+
+  <style>
+    input {
+      width: 70px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input id="age" type="number" min="0" max="110">
+  <button onclick="survey()">실행</button>
+  <!-- <input id="num1" type="text"> -->
+  <!-- <input id="num2" type="text">
+  <input id="num3" type="text"> -->
+  <!-- <button onclick="find()">실행</button> -->
+  <div id="result"></div>
+</body>
+
+</html>

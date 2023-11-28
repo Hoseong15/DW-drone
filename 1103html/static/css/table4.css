@@ -1,0 +1,47 @@
+.house{border-collapse: collapse; }
+.house tr th{
+  color: #fff;
+  background-color: darkblue;
+  border-right: 1px solid #fff;
+  border-bottom: 2px solid #aaa;
+  height: 30px;
+}
+.house tr td{
+  height: 35px;
+  border-bottom: 2px solid #aaa;
+}
+.date{width: 100px;}
+.detail{width: 200px;}
+.income{width: 150px;}
+.expense{width: 150px;}
+.payment{width: 120px;}
+.dateCell{
+  background-color: rgb(132, 207, 47);
+  text-align: center;
+}
+.detailCell:hover{
+  background-color: #aaa;
+  opacity: .3;
+}
+.incomeCell{
+  text-align: center;
+  background-color: darkgreen;
+}
+.incomeCell:hover{
+  color: #fff;
+  background-color:tomato;
+  font-weight: 700;
+}
+.expenseCell{
+  color: #fff;
+  background-color: rgb(235, 72, 72);
+  text-align: center;
+}
+.expenseCell:hover{
+  color: #000;
+  background-color:olive;
+  font-weight: 700;
+}
+.paymentCell{
+  text-align: center;
+}

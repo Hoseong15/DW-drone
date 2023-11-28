@@ -1,0 +1,27 @@
+#out{
+  width: 800px;
+  height: 250px;
+  background-color: yellow;
+  box-sizing: border-box;
+  padding-left: 600px;    
+}
+#in{
+  width: 200px;
+  height: 50px;
+  background-color: gray;
+  /* margin-left: 600px; */
+}
+
+#master{
+  width: 300px;
+  background-color: bisque;
+  text-align: center;
+  padding: 50px 0;
+}
+
+#animal{
+  width: 800px;
+  background-color: burlywood;
+  padding: 100px 0 0px 50px;
+  margin: 30px 0 0 0;
+}
