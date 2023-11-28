@@ -11,6 +11,12 @@ $("#join").on('click', function () {
   }
 })
 
+$("#myphone").on("keyup",function(){
+  if($(this).val().length >=4){
+    
+  }
+})
+
 $("#mypw").on('keyup', function () {
   let len = $(this).val().length;
   if (len < 6 || len > 12) {
