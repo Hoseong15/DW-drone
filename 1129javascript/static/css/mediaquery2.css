@@ -1,0 +1,139 @@
+/*
+  단위
+  절대값 - px, pt, cm. mm, in
+  상대값 - vh, %, vw, em, rem,vmin, vamx
+
+      em, rem -> 글꼴 크기
+      font-size:10px
+      1em -> 10px
+      1.5em -> 15px
+      3em -> 30px
+      em : 상위태그(부모태그) 기준적용
+      rem : 최상위태그(html)기준적용
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+#wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: gainsboro;
+  padding: 10px 0;
+}
+
+#nav {
+  width: calc(100% - 50px);
+  height: 30px;
+  background-color: brown;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(185, 240, 130);
+}
+
+#main {
+  width: 100%;
+  padding: 50px 0;
+  background-color: bisque;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+
+.item {
+  width: 30%;
+}
+
+#footer {
+  position: relative;
+  width: 100%;
+  padding: 20px 50px;
+  background-color: cornflowerblue;
+}
+
+.addr {
+  width: 70%;
+  height: 20px;
+  background-color: wheat;
+}
+
+.tel {
+  width: 30%;
+  height: 20px;
+  background-color: tomato;
+}
+
+#footer .logo {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+
+
+
+@media screen and (max-width : 1024px) {
+  #nav {
+    order: 2;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    order: 1;
+  }
+
+  .item {
+    width: 45%;
+  }
+
+  #footer .logo {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #header {
+    justify-content: center;
+  }
+  #nav {
+    display: none;
+  }
+  .logo {
+    width: 120px;
+    height: 50px;
+  }
+  .item {
+    width: 100%;
+  }
+}
