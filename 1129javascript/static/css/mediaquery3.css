@@ -31,3 +31,107 @@ img{width: 100%;}
 }
 .mobile_menu{font-size: 2rem;}
 .mobile_search{font-size: 2em;}
+#main{
+  width: 100%;
+  padding: 50px;
+  background-color: pink;
+}
+.content{
+  width: 100%;
+  padding: 0 10%;
+}
+.item{
+  margin-bottom: 5px;
+}
+.item:last-child{
+  margin-bottom: 0px;
+}
+#footer{
+  width: 100%;
+  padding: 50px;
+  background-color: dodgerblue;
+  position: relative;
+}
+.addr, .tel{
+  position: relative;
+  left: 40%;
+  width: 60%;
+  height: 2rem;
+  background-color: antiquewhite;
+}
+#footer .logo{
+  position: absolute;
+  top: 50px;
+  width: 4rem;
+  height: 4rem;
+  background-color: violet;
+  
+}
+
+@media screen and (min-width:768px) {
+ html{font-size: 15px;}
+ #header{font-size: 20px;}
+ .content{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 20px;
+ }
+ .item{
+  margin-bottom: 0px;
+  width: 45%;
+ }
+}
+
+@media screen and (min-width:1024px) {
+  .mobile_search,.mobile_menu{
+    display: none;
+  }
+  #nav, .pc_search{
+    display: block;
+    width: 35%;
+  }
+  .pc_search input{
+    height: 30px;
+    padding-left: 8px;
+    font-size: 1.5em;
+    width: 8em;
+  }
+  #nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .menu{
+    width: 70px;
+    height: 25px;
+  }
+  .content{
+    gap: 25px;
+   }
+   .item{
+    width: 30%;
+   }
+   #wrap{
+    max-width: 1400px;
+   }
+   #footer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .addr, .tel{
+    left: 0px;
+    width: 35%;
+  }
+
+  #footer .logo{
+    position:relative;
+    top: 2rem;
+    right: 70%;
+    width: 8rem;
+    height: 8rem;
+  }
+
+
+}
