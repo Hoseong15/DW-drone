@@ -121,7 +121,26 @@
     #container4{
       width: 800px;
       display: grid;
+      grid-auto-rows: 50px;
+      gap: 10px;
+      grid-template-areas: 
+        "header  header  header"
+        "ad      ad      login"
+        "news    news    login"
+        "news    news    weather"
+        "shop    shop    weather"
+        ". . ." /*.빈공간*/
+        "footer  footer  footer"
+      ;
     }
+    #container4 .item:first-child{grid-area: header;}
+    #container4 .item:nth-child(2){grid-area: ad;}
+    #container4 .item:nth-child(3){grid-area: login;}
+    #container4 .item:nth-child(4){grid-area: news;}
+    #container4 .item:nth-child(5){grid-area: weather;}
+    #container4 .item:nth-child(6){grid-area: shop;}
+    #container4 .item:last-child{grid-area: footer;}
+    
 
    </style>
 </head>
