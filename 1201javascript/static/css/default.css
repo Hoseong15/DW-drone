@@ -1,0 +1,24 @@
+:root{
+  --bg-color:#222845; /*전체 배경색*/
+  --font-color:#cbcbcb; /*기본 텍스트 색상*/
+  --box-color:#747474; /*컨텐트 배경색*/
+  --bt-color:#2f9d27; /*버튼 배경색*/
+  --menu-hover:#8c8c8c; /*메뉴 배경색*/
+  --menu-hover-color:#f2cb61; /*메뉴 마우스오버*/
+  --font-size:1.2rem;
+  --title-size:2.5rem;
+  --content-size:1.5rem;
+  --sub-size:1.9rem;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: var(--bg-color);
+  font-size: var(--font-size);
+  color: var(--font-color);
+}
