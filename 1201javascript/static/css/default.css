@@ -10,15 +10,118 @@
   --content-size:1.5rem;
   --sub-size:1.9rem;
 }
-
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 body{
   background-color: var(--bg-color);
   font-size: var(--font-size);
   color: var(--font-color);
 }
+ul,li{list-style: none;}
+a{text-decoration: none; color: inherit;}
+span,b,i,strong{display: inline-block;}
+table{border-collapse: collapse; text-align: center;}
+input[type=text], input[type=password], input[type=email], input[type=number]{
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  font-size: var(--content-size);
+}
+button, input[type=button], input[type=submit] {
+  border: none;
+  border-radius: 10px;
+  background-color: var(--bt-color);
+  font-size: var(--sub-size);
+}
+#wrap{
+  position: relative;
+  width: 100%;
+}
+#top{
+  width: 1200px;
+  padding: 5px 20px;
+  margin: 0 auto;
+}
+#top, .topMenu{
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  font-size: .9rem;
+}
+#top .topMenu span {
+  padding: 0 15px;
+}
+#top .topMenu span:nth-child(2){
+  border-left: 2px solid var(--font-color);
+  border-right: 2px solid var(--font-color);
+}
+#header{
+  width: 100%;
+  border-top: 2px solid var(--menu-hover-color);
+  border-bottom: 1px solid var(--font-color);
+  padding: 10px 0;
+}
+#header #nav{
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center
+}
+
+#header #nav .logo{
+  width: 70px;
+  height: 70px;
+  background-image: url("../images/로고이미지.png");
+  background-position: center ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#header #nav .menu{
+  position: relative;
+  width: 900px;
+}
+#header #nav .menu .menuList{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.menuList .menuItem{
+  position: relative;
+  cursor: pointer;
+  padding: 20px 5px;
+}
+.menuList .menuItem .subMenu{
+  position: absolute;
+  top: 80px;
+  display: none;
+  width: 130px;
+  font-size: 1rem;
+}
+.menuList .menuItem .subMenu .subItem{
+  line-height: 30px;
+}
+/* .menuList .menuItem .subMenu{
+  position: absolute;
+  width: 130px;
+  font-size: 1rem;
+  opacity: 0;
+}
+.menuList .menuItem .subMenu .subItem{
+  position: absolute;
+  line-height: 0;
+  top: -10px;
+}
+.menuList .menuItem:hover .subMenu{
+  opacity: 1;
+}
+.menuList .menuItem:hover .subMenu .subItem{
+  position: relative;
+  top: 40px;
+  line-height: 30px;
+} */
