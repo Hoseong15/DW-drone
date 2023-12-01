@@ -3,6 +3,13 @@
   margin: 0;
   padding: 0;
 }
+#header{
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  background-color: var(--bg-color);
+  opacity: .8;
+}
 
 #searchWrapper{
   width: 1200px;

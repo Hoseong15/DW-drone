@@ -29,7 +29,7 @@ input[type=text], input[type=password], input[type=email], input[type=number]{
   outline: none;
   border: none;
   font-size: var(--content-size);
-  background-color: initial;
+  background-color: #f2cb61;
 }
 button, input[type=button], input[type=submit] {
   border: none;
@@ -79,10 +79,10 @@ img{
 #header #nav .logo{
   width: 70px;
   height: 70px;
-  background-image: url("../images/로고이미지.png");
+  background-image: url("../images/j.jpg");
   background-position: center ;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 #header #nav .menu{
   position: relative;

@@ -1,0 +1,71 @@
+label{
+  display: inline-block;
+}
+#main{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+#loginWrap{
+  position: relative;
+  width: 500px;
+}
+.logo{
+  width: 200px;
+  margin: 0 auto;
+  
+}
+.title{
+  text-align: center;
+  padding: 15px 0;
+}
+.loginBox{
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+}
+.login{
+  width: 100%;
+  line-height: 65px;
+  border: 1px solid #fff;
+  padding: 20px;
+}
+.loginId,.loginPW{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.loginId #id{
+  order: 1;
+  width: 80%;
+  height: 55px;
+}
+.loginId label{
+  width: 20%;
+  text-align: center;
+  font-size: var(--title-size);
+}
+.loginPW #pw{
+  order: 1;
+  width: 80%;
+  height: 55px;
+}
+.loginPW label{
+  width: 20%;
+  text-align: center;
+  font-size: var(--title-size);
+}
+.loginBt button{
+  width: 100%;
+  padding: 10px 0;
+}
+
+.memberNav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
