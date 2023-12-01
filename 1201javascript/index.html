@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="./static/css/default.css">
+  <link rel="stylesheet" href="./static/css/index.css">
 
 </head>
 
@@ -29,7 +29,7 @@
 
     <div id="header">
       <div id="nav">
-        <div class="logo"></div>
+        <div class="logo" onclick="javascript:location.href='./index.html';"></div>
         <div class="menu">
           <ul class="menuList">
             <li class="menuItem">FreeDomLife
@@ -74,6 +74,41 @@
       </div>
     </div>
 
+    <div id="searchWrapper">
+      <div class="search">
+        <input type="text" name="searchWord" id="searchWord">
+        <label for=""><i class="bi bi-search-heart"></i></label>
+      </div>
+    </div>
+
+    <div id="slideWrapper">
+      <div id="slideBox">
+        <div class="slide">
+          <ul class="slideList">
+            <li class="slideImg"><img src="./static/images/이미지1.jpg" alt="메인이미지1"></li>
+            <li class="slideImg"><img src="./static/images/이미지2.jpg" alt="메인이미지2"></li>
+            <li class="slideImg"><img src="./static/images/이미지3.jpg" alt="메인이미지3"></li>
+            <li class="slideImg"><img src="./static/images/이미지4.jpg" alt="메인이미지4"></li>
+          </ul>
+        </div>
+        <p class="leftBt"><span><i class="bi bi-arrow-left-circle"></i></span></p>
+        <p class="rigthBt"><span><i class="bi bi-arrow-right-circle"></i></span></p>
+      </div>
+    </div>
+
+    <div id="main">
+     <div class="gridTest">
+      <div class="gridItem"><img src="./static/images/1.jpg" alt=""></div>
+      <div class="gridItem"><img src="./static/images/2.jpg" alt=""></div>
+      <div class="gridItem"><img src="./static/images/3.jpg" alt=""></div>
+      <div class="gridItem"><img src="./static/images/4.jpg" alt=""></div>
+     </div>
+
+    </div>
+
+    <div id="footer">
+      <h4>프리덤클럽 Corp.</h4>
+    </div>
   </div>
 
 
