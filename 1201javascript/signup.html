@@ -78,7 +78,35 @@
     </div>
 
     <div id="main">
-      
+      <form enctype="multipart/form-data" action="signup" method="post" name="signfm" id="signfm">
+        <div id="joinBox">
+          <div class="join_input">
+            <input type="text" name="id" id="id">
+            <label for="id">아이디</label>
+          </div>
+          <div class="join_input">
+            <input type="password" name="pw" id="pw">
+            <label for="pw">비밀번호</label>
+          </div>
+          <div class="join_input">
+            <input type="password" name="pwre" id="pwre">
+            <label for="pwre">비밀번호 확인</label>
+          </div>
+          <div class="join_input">
+            <input type="email" name="email" id="email">
+            <label for="email">이메일</label>
+          </div>
+          <div class="join_input">
+            <input type="file" name="face" id="face">
+            <label for="face">내 사진</label>
+            <img id="select_face">
+          </div>
+        </div>
+        <div class="joinBt">
+          <button type="button" id="bt">회원가입</button>
+          <button type="reset">취소</button>
+        </div>
+      </form>
     </div>
 
     <div id="footer">
