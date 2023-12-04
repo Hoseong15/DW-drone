@@ -3,32 +3,31 @@
   width: 1200px;
   margin: 0 auto;
 }
-.table1, .table2{
-  width: 100%;
-  border: 1px solid #000;
-  background-color: #fff;
-  color: #000;
-}
 .table1{
-  width: 50%;
+  width: 700px;
+  border-collapse: collapse;
   margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-.table1  th:first-child{
+.table1 td:first-child {
   width: 90%;
-  border-right: 1px solid #000;
 }
-.table2{
-  width: 100%;
-  margin-bottom: 20px;
+
+.table2 {
+  width: 900px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
-.table2 tr ,th,td {
-  border: 1px solid #000;
+
+.table2 th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
 }
-.table2 th:nth-child(2){
-  width: 70%;
-}
-.table2 th:nth-child(1),.table2 th:nth-child(3),.table2 th:nth-child(4){
-  width: 10%;
+
+.table2 td:nth-child(2) {
+  width: 60%;
 }
