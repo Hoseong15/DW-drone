@@ -1,0 +1,28 @@
+#wrap{
+  display: grid;
+  width: 500px;
+  grid-template-columns: repeat(4,1fr);
+  grid-auto-rows: 50px;
+  gap: 10px;
+}
+.item{
+  background-color: lightgray;
+  box-shadow: inset 0 0 1px 4px gray;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item:nth-child(13){
+  grid-column: 1/3;
+}
+
+#res{
+  width: 500px;
+  border-bottom: 1px solid #000;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  font-size: 30px;
+}
