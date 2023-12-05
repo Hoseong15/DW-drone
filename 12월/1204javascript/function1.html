@@ -101,7 +101,7 @@
     //  input태그 값 가져오는 함수, 수치에 따라 결과 출력하는 함수
 
     // 종우가 비만도 측정을 하였다.
-    //  비만도 BMI지수 계산은 몸무게((키/100) * (키/100))
+    //  비만도 BMI지수 계산은 몸무게/((키/100) * (키/100))
     //  BMI 지수가 18.5 이하면 저체중
     //  23.0 ~ 24.9 사이면 과체중
     //  25이상이면 비만
@@ -113,19 +113,21 @@
     }
 
     function ccc(a) {
-      if (a > 70 && a < 100) {
+      if (a >= 70 && a < 100) {
         $('#text').text("공복혈당");
       } else if (a >= 100 && a < 140) {
         $('#text').text("식후 2시간 혈당");
-      } else if (a < 5.7) {
+      } else if (a < 66.1) {
         $('#text').text("당화혈색소");
+      } else {
+        $('#text').text("정상");
       }
     }
 
     function wow() {
      
-      var height = parseFloat($('#height').val());;
-      var weight = parseFloat($('#weight').val());;
+      var height = parseFloat($('#height').val());
+      var weight = parseFloat($('#weight').val());
 
       var bmi = weight / ((height / 100) * (height / 100));
 
