@@ -1,0 +1,59 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img{width: 100%;}
+
+#screen{
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+#comView{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.com{
+  width: 80%;
+
+}
+
+#userView{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  row-gap: 20px;
+}
+.user{
+  width: 50%;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 55px;
+}
+.user:hover{
+  background-color: pink;
+}
+
+#result{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.bt{
+  padding: 20px 0;
+}
+#start{
+  width: 80px;
+  font-size: 30px;
+  padding: 10px;
+  border: 3px solid pink;
+  background-color: none;
+  cursor: pointer;
+}
