@@ -22,3 +22,10 @@ button{
   padding-top: 30px;
   border-top: 1px solid gray ;
 }
+
+#draw table{
+  border-collapse: collapse;
+}
+#draw table tr td{
+  border: 1px solid #000;
+}
