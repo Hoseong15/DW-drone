@@ -56,3 +56,20 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.memoItem b {
+  width: 50px;
+  text-align: center;
+}
+.memoItem h3{
+  width: 350px;
+  margin: 0;
+  padding: 10px 0;
+}
+.memoItem div{
+  text-align: center;
+}
+.memoItem .del{
+  width: 20px;
+  cursor:pointer;
+}

@@ -7,12 +7,12 @@ function memo(num, content, importance) { // 작성된 메모
   this.importance = importance;
 }
 
-memo.prototype.create = function(){
+memo.prototype.create = function(i){
 return `<div class='memoItem'>
   <b>${this.num}</b>
   <h3>${this.content}</h3> 
   <div style='width:70px;background:${this.importance.color}'>${this.importance.text}</div>
-  <div class='del'><i class="bi bi-x-lg"></i></div>
+  <div class='del' onclick='del_memo(${i})'><i class="bi bi-x-lg"></i></div>
 </div> `
 }
 
@@ -61,7 +61,40 @@ function save() { // 등록버튼을 클릭하면 동작함수
   var last = memo_list.length-1; 
   //memo_list배열에 memo객체를 저장 후 저장된 memo객체의 인덱스 구하기
 
-  $(".memoList").append(memo_list[last].create());
+  // append - 태그의 마지막에 추가 (자식)
+  // after - 현재 선택한 태그뒤에 추가 (형제)
+  // prepend - 태그의 자식으로 앞에 추가 (자식)
+  // before - 현재 선택한 태그 앞에 추가 (형제)
+  $(".memoList").prepend(memo_list[last].create(num));
+  num++
+ 
+  // 삭제 아이콘 클릭 기능 적용
+  $(".del").on('click',del_memo);
+}
+
+function del_memo(n) {
+ 
+   for(var i in memo_list) { // memo객체저장 된 배열 전체 조회
+     if(n == memo_list[i].num) { // 삭제할 번호와 일치하는 memo객체찾기
+       memo_list.splice(i,1); // 배열에서 삭제
+     };
+   }
+   $(".memoList").empty(); // 목록 태그 전체 비우기
+
+   for(var v of memo_list) { // memo_list 배열에 있는 memo객체 다시 출력
+     $(".memoList").prepend(v.create(v.num));
+   }
+
+  
+  //var div = $(this); // 삭제하고자 클릭 한 아이콘의 div 
+
+  // parent()  : 바로위의 부모 태그 가져오기 
+  // parents() : 위에 있는 모든 부모태그들
+  // var parent = div.parent();
+  // empty() : 선택한 태그안에 전부를 비우기
+  // remove() : 선택한 태그안에 전부를 삭제하고 자기 자기 자신도 삭제
+  // unwrap() : 선택한 태그의 부모를 삭제
+  // parent.remove();
 }
 
 
@@ -69,6 +102,20 @@ function save() { // 등록버튼을 클릭하면 동작함수
 
 
 
+/*  
+맵 만들어오기(다음주 화요일까지)
+어떤 맵이냐?
+가로 7칸, 세로 7칸 의 정사각형
+
+바로바로!!!부루마블 게임판 만들기
+대한민국과 일본 도시이름으로 칸을 채워 오세요.
+
+각면 마다 서로 다른색을 주세요
+가운데 양쪽 모서리끝에 이미지 넣기
+
+
+
+*/
 
 
 
