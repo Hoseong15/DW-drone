@@ -12,7 +12,7 @@ const land_purchase = [ // 각 도시의 매입가격(만단위)
   0, 12, 10, 15, 12, 9, 9, 7, 0
 ];
 const bg_image = [ // 모서리구역의 배경이미지
-  "출발.png", "무인도.jpg","복지기금.png","인천공항jpg"
+  "출발.png", "무인도.jpg","납부.jpg","인천공항.jpg"
 ];
 
 // 각 구역의 객체 생성자 함수
@@ -27,10 +27,10 @@ function zone_object(name, purchase, owner, color, func, image) {
   this.back = image;
 }
 // 플레이어 생성자 함수
-function player(num) {
+function player(num, color) {
   this.num = num;
   this.color = color;
-  this,money = 100; // 초기 게임머니 100만원
+  this.money = 100; // 초기 게임머니 100만원
   this.zone = new Array(); // 매입 한 토지
   this.drrft_turn = 0; // 무인도 남은 턴
   this.location = 0; // 현재위치
@@ -40,12 +40,101 @@ function player(num) {
 let fund = 0; // 사회복지기금 모금 금액 저장변수
 let island_ = new Array(); // 무인도에 도착한 플레이어
 let zone = new Array(); // 각 구역의 객체 저장 배열
+let player_list = new Array(); // 개임 참가자
 
-function zone_create() {
-  for(var i = 0; i < zone_name.length; i++) {
-    for( var k = 0; k < zone_name[i].length; k++) {
 
-    }
+// 함수정의
+// function zone_create() {
+//   for(var i = 0; i < zone_name.length; i++) {
+//     var color =  zone_color[0];
+//     if(i >=0 & i<=7) 
+//       color =  zone_color[2];
+//     if( (i >=8 & i<=23) & i%2==0)
+//       color =  zone_color[3];
+//     if( (i >=8 & i<=23) & i%2==1)
+//       color =  zone_color[1];
+      
+//     var image = "";
+//     if(i == 0) image = bg_image[2];
+//     if(i == 8) image = bg_image[3];
+//     if(i == 23) image = bg_image[1];
+//     if(i == 31) image = bg_image[0];
+
+
+
+//     zone.push(new zone_object(
+//       zone_name[i], land_purchase[i], "", color, "", image,   
+//     ));
+//   }
+//   console.log(zone);
+// }
+
+// 구역객체들을 zone 클래스 div에 적용하기
+
+function zone_draw() {
+  $.getJSON("city.json", function(data){
+    show(data);
+  });
+
+  function show(data){
+    $.each(zone,function(data){
+      $(".zone")
+    })
+    console.log(data);
+
   }
+
+
+  $.each(zone, function(idx, obj){
+    if(idx == 0 || idx == 8 || idx == 23 || idx == 31){
+      $(".zone").eq(idx).css("background-image","url(./static/images/"+obj.back+")");
+      $(".zone").eq(idx).css("background-size", "cover");
+      $(".zone").eq(idx).css("background-position", "center");
+    }
+    else{
+      $(".zone").eq(idx).children(".zone_name").text(obj.name);
+      $(".zone").eq(idx).children(".zone_color").css("background", obj.color);
+    }
+  });
 }
-zone_create();
+
+// zone_create();
+zone_draw();
+
+
+$("#enroll").on('click', game_init );
+$("#player_number").on('change', function(){
+  $(this).next().text($(this).val() + "명");
+});
+$("#player_number + label").text(2 + "명");
+$("input[type=color]").on('change', change_pcl);
+
+function change_pcl() {
+
+}
+
+function game_init() {
+  var pc = Number( $("#player_number").val() );
+  $("#game_state").html("<h3>게임현황</h3>");
+
+  for(var i = 1; i <= pc; i++) {
+    player_list.push(new player(i, "#ff0000"));
+    $("#game_state").append(
+      `<div class='ps'>
+        <b class='pnum'>${i}</b>
+        <input type='color' id='pcl${i}' value='${player_list[i-1].color}'>
+        <div class='steate'>
+          자금 : <b id='pm${i}'>${player_list[i-1].money}만원</b>
+          보유도시 : <b id='pcity${i}'>${player_list[i-1].zone.length}개</b>
+        </div>
+      </div>`
+    );
+  }
+  $("#game_state").show();
+  $("#set_player").hide();
+}
+
+// 과제 - 각 구역의 객체를 json으로 작성해오세요
+//    city.json으로 작성   
+// zone_object 생성자 함수로 생성한 객체들을 json파일로 작성
+// zone_draw을 작동하면 다 나오게

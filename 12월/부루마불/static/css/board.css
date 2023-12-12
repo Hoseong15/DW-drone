@@ -4,8 +4,8 @@
   margin: 0;
 }
 #wrap{
-  position: relative;
-  margin: 0 auto;
+  position: absolute;
+  right: 20px;
   width: 1200px;
 }
 #board{
@@ -16,7 +16,15 @@
   padding: 50px 0;
 }
 .zone{
-  border: 1px solid #000;
+  border: 1px solid #fff;
+  background-color: rgba(153,220,177);
+}
+.zone .zone_name {
+  font-size: 20px;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .zone:first-child, .zone:nth-child(9), .zone:nth-child(32), .zone:nth-child(24){
   width: 200px; height: 200px;
@@ -51,6 +59,7 @@
   width: 50px;
 }
 .right .zone_name{
+  width: calc(100% - 50px);
   border-left: 1px solid #000;
 }
 .bottom{
@@ -67,5 +76,43 @@
   background-image: url("../images/부루마불 로고.png");
   background-position: center;
   background-repeat: no-repeat;
-  /* background-size: contain; */
+}
+
+/*게임 플레이어 설정 및 현황판*/
+#game_player{
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  background-color: rgba(230,230,230,.3);
+  z-index: 1;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+#set_player{
+  width: 200px;
+}
+.pn{
+  width: 100%;
+  padding: 5px;
+}
+.pn input[type=range]{
+  width: 180px;
+  height: 30px;
+  -webkit-appearance: none;
+  background-color: green;
+  border-radius: 15px;
+}
+.pn input[type=range]::-webkit-slider-thumb{
+  /* 슬라이더 모양변경 - 슬라이더 설정값 변경 */
+  -webkit-appearance: none;
+  width: 20px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: red;
+}
+#enroll{
+  float:right;
+  font-size: 20px;
+  padding: 3px 10px;
 }

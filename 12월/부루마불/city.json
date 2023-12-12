@@ -1,0 +1,259 @@
+[
+  {
+    "name": "복지기금",
+    "purchase": 0,
+    "owner": "",
+    "color": "#FFBB00",
+    "back": "납부.jpg",
+    "func": ""
+
+  },
+  {
+    "name": "화성",
+    "purchase": 25,
+    "owner": "",
+    "color": "#FFBB00",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "성남",
+    "purchase": 27,
+    "owner": "",
+    "color": "#FFBB00",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "창원",
+    "purchase": 26,
+    "owner": "",
+    "color": "#FFBB00",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "제주",
+    "purchase": 34,
+    "owner": "",
+    "color": "#FFBB00",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "용인",
+    "purchase": 28,
+    "owner": "",
+    "color": "#FFBB00",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "수원",
+    "purchase": 27,
+    "owner": "",
+    "color": "#FFBB00",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "울산",
+    "purchase": 39,
+    "owner": "",
+    "color": "#FFBB00",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "인천공항",
+    "purchase": 0,
+    "owner": "",
+    "color": "",
+    "back": "인천공항.jpg",
+    "func": ""
+  },
+  {
+    "name": "청주",
+    "purchase": 16,
+    "owner": "",
+    "color": "#53C14B",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "광주",
+    "purchase": 42,
+    "owner": "",
+    "color": "#121212",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "부천",
+    "purchase": 20,
+    "owner": "",
+    "color": "#53C14B",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "대구",
+    "purchase": 45,
+    "owner": "",
+    "color": "#121212",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "남양주",
+    "purchase": 19,
+    "owner": "",
+    "color": "#53C14B",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "인천",
+    "purchase": 48,
+    "owner": "",
+    "color": "#121212",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "포항",
+    "purchase": 27,
+    "owner": "",
+    "color": "#53C14B",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "복지기금납부",
+    "purchase": 0,
+    "owner": "",
+    "color": "#121212",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "천안",
+    "purchase": 21,
+    "owner": "",
+    "color": "#53C14B",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "부산",
+    "purchase": 52,
+    "owner": "",
+    "color": "#121212",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "전주",
+    "purchase": 20,
+    "owner": "",
+    "color": "#53C14B",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "서울",
+    "purchase": 80,
+    "owner": "",
+    "color": "#121212",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "안산",
+    "purchase": 22,
+    "owner": "",
+    "color": "#53C14B",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "대전",
+    "purchase": 120,
+    "owner": "",
+    "color": "#121212",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "무인도",
+    "purchase": 0,
+    "owner": "",
+    "color": "",
+    "back": "무인도.jpg",
+    "func": ""
+  },
+  {
+    "name": "안양",
+    "purchase": 12,
+    "owner": "",
+    "color": "#ff2424",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "김해",
+    "purchase": 10,
+    "owner": "",
+    "color": "#ff2424",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "평택",
+    "purchase": 15,
+    "owner": "",
+    "color": "#ff2424",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "시흥",
+    "purchase": 12,
+    "owner": "",
+    "color": "#ff2424",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "파주",
+    "purchase": 9,
+    "owner": "",
+    "color": "#ff2424",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "의정부",
+    "purchase": 9,
+    "owner": "",
+    "color": "#ff2424",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "김포",
+    "purchase": 7,
+    "owner": "",
+    "color": "#ff2424",
+    "back": "",
+    "func": ""
+  },
+  {
+    "name": "출발",
+    "purchase": 0,
+    "owner": "",
+    "color": "",
+    "back": "출발.png",
+    "func": ""
+  }
+]
