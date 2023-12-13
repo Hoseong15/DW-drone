@@ -33,7 +33,8 @@ let player_list = new Array(); // 개임 참가자
 // asunc function a(){await $.getJSON();}
 $.getJSON("./data/city.json", function(data){
   zone = data;
-  zone_draw()
+  zone_draw();
+  func_link();
 });
 
 function zone_draw() {
@@ -169,6 +170,38 @@ function find_location(n) { // 플레이어 말이 표시 될 위치 또는 이�
     }
   });
   return index; // data-num과 n의 값이 일치하는 태그의 위치넘기기
+}
+
+function func_link() {
+  //0-복지기금 8-공항 16-기금납부 23-무인도 31-출발지
+  zone[0].func = welfare;
+  zone[8].func = airport;
+  zone[16].func = fundpayment;
+  zone[23].func = island;
+  zone[31].func =  complete;
+}
+
+function welfare(gamer) { // 위치에 도착한 플레이어가 복지기금 전액 가져가기
+  alert(`복지기금 ${fund}만원 받았습니다.`);
+  gamer.money += fund; // fund변수는 복지기금 저장해두는곳
+  fund=0;
+  $("#pm" + gamer.num).text(gamer.money+"만원");
+}
+
+function airport(gamer) { // 플레이어가 원하는곳으로 이동(마우스클릭)
+
+}
+function fundpayment(gamer) { // 플레이어의 돈을 복지기금으로 지불(20만원)
+  alert(`복지기금에 20만원 지불했습니다.`)
+  gamer.money -= 20;
+  fund += 20;
+  $("#pm" + gamer.num).text(gamer.money+"만원");
+}
+function island(gamer) { // 3턴동안 탈출 불가능
+
+}
+function complete(gamer) { // 출발지를 도착하거나 통과하면 20만원 보너스
+
 }
 
 

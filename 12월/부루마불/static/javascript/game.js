@@ -81,8 +81,10 @@ function game_todo(location) {
 // 구역객체의 인덱스로도 사용가능
  var city = zone[location];
  var gamer = player_list[turn-1]
+  if(city.purchase == 0) { // 매입금이 0인곳은 무인도,기금,출발,공항
+    city.func(gamer);
 
-  if(city.owner == '') {
+  } else if(city.owner == '') {
     if(confirm(`${city.name}의 매입가는
     ${city.purchase}만원입니다. \n매입하실?`) ) {
       city.owner = turn;
