@@ -1,31 +1,3 @@
-const zone_name = [
-  "복지기금", "화성", "성남", "창원", "제주", "용인", "수원", "울산",
-  "인천공항","청주","광주","부천","대구","남양주","인천","포항",
-  "복지기금납부","천안","부산","전주","서울","안산","대전",
-  "무인도","안양","김해","평택","시흥","파주","의정부","김포","출발"
-];
-const zone_color = ["#FF2424", "#53C14B", "#FFBB00", "#121212"];
-const land_purchase = [ // 각 도시의 매입가격(만단위)
-  0, 25, 27, 26, 34, 28, 27, 39,
-  0, 16, 42, 20, 45, 19, 48, 27,
-  0, 21, 52, 20, 80, 22, 120, 
-  0, 12, 10, 15, 12, 9, 9, 7, 0
-];
-const bg_image = [ // 모서리구역의 배경이미지
-  "출발.png", "무인도.jpg","납부.jpg","인천공항.jpg"
-];
-
-// 각 구역의 객체 생성자 함수
-// 구역이름, 토지매입가격, 소유자, 색상, 기능(모서리), 이미지
-
-function zone_object(name, purchase, owner, color, func, image) {
-  this.name = name;
-  this.purchase = purchase;
-  this.owner = owner;
-  this.color = color;
-  this.func = func;
-  this.back = image;
-}
 // 플레이어 생성자 함수
 function player(num, color) {
   this.num = num;
@@ -44,47 +16,27 @@ let player_list = new Array(); // 개임 참가자
 
 
 // 함수정의
-// function zone_create() {
-//   for(var i = 0; i < zone_name.length; i++) {
-//     var color =  zone_color[0];
-//     if(i >=0 & i<=7) 
-//       color =  zone_color[2];
-//     if( (i >=8 & i<=23) & i%2==0)
-//       color =  zone_color[3];
-//     if( (i >=8 & i<=23) & i%2==1)
-//       color =  zone_color[1];
-      
-//     var image = "";
-//     if(i == 0) image = bg_image[2];
-//     if(i == 8) image = bg_image[3];
-//     if(i == 23) image = bg_image[1];
-//     if(i == 31) image = bg_image[0];
-
-
-
-//     zone.push(new zone_object(
-//       zone_name[i], land_purchase[i], "", color, "", image,   
-//     ));
-//   }
-//   console.log(zone);
-// }
-
 // 구역객체들을 zone 클래스 div에 적용하기
 
+//현재 상황 - json파일내용은 어제 다루었던 zone배열안의 내용과 같다
+// getJSON으로 json파일을 읽어와서 zone배열에 저장
+// zone배열의 내용은 어제와 동일
+// zone_draw()함수는 zone배열의 값을 가지고와서 화면에 표시
+// 하지만 zone_draw()함수가 정상적으로 동작하지 못하고있다.
+// getJSON의 function(data) {}안으로 zone_draw()함수를 넣어주면
+// 정상적으로 실행된다.
+// 비동기문제 발생!!!
+// 비동기처리 코드가 실행이 완료되면 그다음 실행 될 수 있게 하는방법
+// async, await
+// async를 비동기함수 앞에 붙여준다.
+// await는 비동기 처리 앞에 붙여준다.
+// asunc function a(){await $.getJSON();}
+$.getJSON("./data/city.json", function(data){
+  zone= data;
+  zone_draw()
+});
+
 function zone_draw() {
-  $.getJSON("city.json", function(data){
-    show(data);
-  });
-
-  function show(data){
-    $.each(zone,function(data){
-      $(".zone")
-    })
-    console.log(data);
-
-  }
-
-
   $.each(zone, function(idx, obj){
     if(idx == 0 || idx == 8 || idx == 23 || idx == 31){
       $(".zone").eq(idx).css("background-image","url(./static/images/"+obj.back+")");
@@ -97,10 +49,6 @@ function zone_draw() {
     }
   });
 }
-
-// zone_create();
-zone_draw();
-
 
 $("#enroll").on('click', game_init );
 $("#player_number").on('change', function(){
@@ -134,7 +82,65 @@ function game_init() {
   $("#set_player").hide();
 }
 
-// 과제 - 각 구역의 객체를 json으로 작성해오세요
-//    city.json으로 작성   
-// zone_object 생성자 함수로 생성한 객체들을 json파일로 작성
-// zone_draw을 작동하면 다 나오게
+// 게임 플레이어수에 맞는 말 만들기
+// svg - scalable vector graphics
+
+
+
+// const zone_name = [
+//   "복지기금", "화성", "성남", "창원", "제주", "용인", "수원", "울산",
+//   "인천공항","청주","광주","부천","대구","남양주","인천","포항",
+//   "복지기금납부","천안","부산","전주","서울","안산","대전",
+//   "무인도","안양","김해","평택","시흥","파주","의정부","김포","출발"
+// ];
+// const zone_color = ["#FF2424", "#53C14B", "#FFBB00", "#121212"];
+// const land_purchase = [ // 각 도시의 매입가격(만단위)
+//   0, 25, 27, 26, 34, 28, 27, 39,
+//   0, 16, 42, 20, 45, 19, 48, 27,
+//   0, 21, 52, 20, 80, 22, 120, 
+//   0, 12, 10, 15, 12, 9, 9, 7, 0
+// ];
+// const bg_image = [ // 모서리구역의 배경이미지
+//   "출발.png", "무인도.jpg","납부.jpg","인천공항.jpg"
+// ];
+
+// // 각 구역의 객체 생성자 함수
+// // 구역이름, 토지매입가격, 소유자, 색상, 기능(모서리), 이미지
+
+// function zone_object(name, purchase, owner, color, func, image) {
+//   this.name = name;
+//   this.purchase = purchase;
+//   this.owner = owner;
+//   this.color = color;
+//   this.func = func;
+//   this.back = image;
+// }
+
+
+
+// function zone_create() {
+//   for(var i = 0; i < zone_name.length; i++) {
+//     var color =  zone_color[0];
+//     if(i >=0 & i<=7) 
+//       color =  zone_color[2];
+//     if( (i >=8 & i<=23) & i%2==0)
+//       color =  zone_color[3];
+//     if( (i >=8 & i<=23) & i%2==1)
+//       color =  zone_color[1];
+      
+//     var image = "";
+//     if(i == 0) image = bg_image[2];
+//     if(i == 8) image = bg_image[3];
+//     if(i == 23) image = bg_image[1];
+//     if(i == 31) image = bg_image[0];
+
+
+
+//     zone.push(new zone_object(
+//       zone_name[i], land_purchase[i], "", color, "", image,   
+//     ));
+//   }
+//   console.log(JSON.stringify(zone));
+// }
+// zone_create();
+
