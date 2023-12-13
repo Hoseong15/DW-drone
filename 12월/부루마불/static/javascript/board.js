@@ -32,7 +32,7 @@ let player_list = new Array(); // 개임 참가자
 // await는 비동기 처리 앞에 붙여준다.
 // asunc function a(){await $.getJSON();}
 $.getJSON("./data/city.json", function(data){
-  zone= data;
+  zone = data;
   zone_draw()
 });
 
@@ -47,6 +47,8 @@ function zone_draw() {
       $(".zone").eq(idx).children(".zone_name").text(obj.name);
       $(".zone").eq(idx).children(".zone_color").css("background", obj.color);
     }
+    // 각 구역의 번호 부여
+    $(".zone").eq(idx).attr("data-num",obj.num)
   });
 }
 
@@ -55,11 +57,7 @@ $("#player_number").on('change', function(){
   $(this).next().text($(this).val() + "명");
 });
 $("#player_number + label").text(2 + "명");
-$("input[type=color]").on('change', change_pcl);
 
-function change_pcl() {
-
-}
 
 function game_init() {
   var pc = Number( $("#player_number").val() );
@@ -78,12 +76,99 @@ function game_init() {
       </div>`
     );
   }
+  
+  // 게임 플레이어수에 맞는 말 만들기
+  // svg - scalable vector graphics(수학공식을 통해 이미지를 저장,표시)
+  // var idx = find_location(0); 
+
+  for(var i = 0; i < player_list.length; i++) {
+    var gamer = player_list[i];
+    var zone_location = find_location(gamer.location)
+    var tag = `
+      <div class='meeple m${gamer.num}' data-pn='${gamer.num}'
+      style='color:${gamer.color};'>
+        <i class="fa-solid fa-person-skiing"></i> 
+      </div>
+      `;
+      $(".zone").eq(zone_location).append(tag);
+
+      overlap(zone_location);
+  }
+  
+  function create_dice() { // 화면에 주사위 나타내기
+
+  }
+
+  function overlap(location) { // 말이 생성되거나 이동했을때 위치에 다수의 말이
+    // 있다면 겹치지 않기 위한 코드를 실행하는 함수
+    var len = $(".zone").eq(zone_location).children(".meeple").length;
+    if( len >= 2 ) {
+      var left = 50, top=50;
+      for(var i = 0; i < len; i++) {
+        $(".zone").eq(location).children(".meeple").eq(i).css("left",(left+i*5)+"%")
+        $(".zone").eq(location).children(".meeple").eq(i).css("top",(top+i*5)+"%")
+
+      }
+    }
+  }
+  create_dice(); // 주사위생성
+  $("input[type=color]").on('change', change_pcl);
   $("#game_state").show();
   $("#set_player").hide();
 }
 
-// 게임 플레이어수에 맞는 말 만들기
-// svg - scalable vector graphics
+function change_pcl() { // 플레이어가 자신의 말 색상을 변경할 경우 실행
+  
+  var new_color = $(this).val();
+  var num = Number($(this).attr("id").substring(3)); // attr은 태그의 속성 - id,class,name등
+  var gamer = player_list[num-1]; // 색상 변경한 플레이어
+
+  gamer.color = new_color;
+  // 자신의 말 찾기, num변수에는 플레이어의 번호가 저장되어있다.
+
+  for(var i = 0; i < $(".meeple").length; i++) {
+    if( $(".meeple").eq(i).data("pn") == num) {
+      $(".meeple").eq(i).css("color", new_color);
+      break; // 플레이어말 찾아서 색 변경했으니 반복문 종료
+    }
+  }
+
+
+}
+
+
+function find_location(n) { // 플레이어 말이 표시 될 위치 또는 이동할 위치 찾기
+  var index = 0;
+  $(".zone").each(function(idx,item){
+    var num = Number( $(item).data("num") ); // zone클래스 태그의 data-num값
+    if(num == n) {
+      index = idx;
+      return; // return은 해당함수를 종료시키기도한다
+      // each안에 만든 익명함수만 종료시키기 때문에 find_location함수를
+      // 통해 return(반환)하는게 불가능하다. 그래서 값을 index변수에 
+      // 저장하여 index변수를 반환시켜준다.
+    }
+  });
+  return index; // data-num과 n의 값이 일치하는 태그의 위치넘기기
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

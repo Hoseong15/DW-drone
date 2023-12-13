@@ -1,5 +1,6 @@
 [
   {
+    "num" : 16,
     "name": "복지기금",
     "purchase": 0,
     "owner": "",
@@ -9,6 +10,7 @@
 
   },
   {
+    "num" : 17,
     "name": "화성",
     "purchase": 25,
     "owner": "",
@@ -17,6 +19,7 @@
     "func": ""
   },
   {
+    "num" : 18,
     "name": "성남",
     "purchase": 27,
     "owner": "",
@@ -25,6 +28,7 @@
     "func": ""
   },
   {
+    "num" : 19,
     "name": "창원",
     "purchase": 26,
     "owner": "",
@@ -33,6 +37,7 @@
     "func": ""
   },
   {
+    "num" : 20,
     "name": "제주",
     "purchase": 34,
     "owner": "",
@@ -41,6 +46,7 @@
     "func": ""
   },
   {
+    "num" : 21,
     "name": "용인",
     "purchase": 28,
     "owner": "",
@@ -49,6 +55,7 @@
     "func": ""
   },
   {
+    "num" : 22,
     "name": "수원",
     "purchase": 27,
     "owner": "",
@@ -57,6 +64,7 @@
     "func": ""
   },
   {
+    "num" : 23,
     "name": "울산",
     "purchase": 39,
     "owner": "",
@@ -65,6 +73,7 @@
     "func": ""
   },
   {
+    "num" : 24,
     "name": "인천공항",
     "purchase": 0,
     "owner": "",
@@ -73,6 +82,7 @@
     "func": ""
   },
   {
+    "num" : 15,
     "name": "청주",
     "purchase": 16,
     "owner": "",
@@ -81,6 +91,7 @@
     "func": ""
   },
   {
+    "num" : 25,
     "name": "광주",
     "purchase": 42,
     "owner": "",
@@ -89,6 +100,7 @@
     "func": ""
   },
   {
+    "num" : 14,
     "name": "부천",
     "purchase": 20,
     "owner": "",
@@ -97,6 +109,7 @@
     "func": ""
   },
   {
+    "num" : 26,
     "name": "대구",
     "purchase": 45,
     "owner": "",
@@ -105,6 +118,7 @@
     "func": ""
   },
   {
+    "num" : 13,
     "name": "남양주",
     "purchase": 19,
     "owner": "",
@@ -113,6 +127,7 @@
     "func": ""
   },
   {
+    "num" : 27,
     "name": "인천",
     "purchase": 48,
     "owner": "",
@@ -121,6 +136,7 @@
     "func": ""
   },
   {
+    "num" : 12,
     "name": "포항",
     "purchase": 27,
     "owner": "",
@@ -129,6 +145,7 @@
     "func": ""
   },
   {
+    "num" : 28,
     "name": "복지기금납부",
     "purchase": 0,
     "owner": "",
@@ -137,6 +154,7 @@
     "func": ""
   },
   {
+    "num" : 11,
     "name": "천안",
     "purchase": 21,
     "owner": "",
@@ -145,6 +163,7 @@
     "func": ""
   },
   {
+    "num" : 29,
     "name": "부산",
     "purchase": 52,
     "owner": "",
@@ -153,6 +172,7 @@
     "func": ""
   },
   {
+    "num" : 10,
     "name": "전주",
     "purchase": 20,
     "owner": "",
@@ -161,6 +181,7 @@
     "func": ""
   },
   {
+    "num" : 30,
     "name": "서울",
     "purchase": 80,
     "owner": "",
@@ -169,6 +190,7 @@
     "func": ""
   },
   {
+    "num" : 9,
     "name": "안산",
     "purchase": 22,
     "owner": "",
@@ -177,6 +199,7 @@
     "func": ""
   },
   {
+    "num" : 31,
     "name": "대전",
     "purchase": 120,
     "owner": "",
@@ -185,6 +208,7 @@
     "func": ""
   },
   {
+    "num" : 8,
     "name": "무인도",
     "purchase": 0,
     "owner": "",
@@ -193,6 +217,7 @@
     "func": ""
   },
   {
+    "num" : 7,
     "name": "안양",
     "purchase": 12,
     "owner": "",
@@ -201,6 +226,7 @@
     "func": ""
   },
   {
+    "num" : 6,
     "name": "김해",
     "purchase": 10,
     "owner": "",
@@ -209,6 +235,7 @@
     "func": ""
   },
   {
+    "num" : 5,
     "name": "평택",
     "purchase": 15,
     "owner": "",
@@ -217,6 +244,7 @@
     "func": ""
   },
   {
+    "num" : 4,
     "name": "시흥",
     "purchase": 12,
     "owner": "",
@@ -225,6 +253,7 @@
     "func": ""
   },
   {
+    "num" : 3,
     "name": "파주",
     "purchase": 9,
     "owner": "",
@@ -233,6 +262,7 @@
     "func": ""
   },
   {
+    "num" : 2,
     "name": "의정부",
     "purchase": 9,
     "owner": "",
@@ -241,6 +271,7 @@
     "func": ""
   },
   {
+    "num" : 1,
     "name": "김포",
     "purchase": 7,
     "owner": "",
@@ -249,6 +280,7 @@
     "func": ""
   },
   {
+    "num" : 0,
     "name": "출발",
     "purchase": 0,
     "owner": "",

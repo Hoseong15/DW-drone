@@ -16,6 +16,7 @@
   padding: 50px 0;
 }
 .zone{
+  position: relative;
   border: 1px solid #fff;
   background-color: rgba(153,220,177);
 }
@@ -115,4 +116,13 @@
   float:right;
   font-size: 20px;
   padding: 3px 10px;
+}
+
+.meeple{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  z-index: 10;
 }
