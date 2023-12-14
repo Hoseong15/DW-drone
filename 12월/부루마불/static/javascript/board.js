@@ -3,9 +3,10 @@ function player(num, color) {
   this.num = num;
   this.color = color;
   this.money = 100; // 초기 게임머니 100만원
-  this.zone = new Array(); // 매입 한 토지
+  this.zone = 0; // 매입 한 토지 수량 저장
   this.drrft_turn = 0; // 무인도 남은 턴
   this.location = 0; // 현재위치
+  this.파산 = false; // 자금부족으로 파산 한경우 true
 }
 
 // 전역변수
@@ -13,6 +14,7 @@ let fund = 0; // 사회복지기금 모금 금액 저장변수
 let island_ = new Array(); // 무인도에 도착한 플레이어
 let zone = new Array(); // 각 구역의 객체 저장 배열
 let player_list = new Array(); // 개임 참가자
+let 탑승객 = 0; // 인천공항에 도착한 플레이어
 
 
 // 함수정의
@@ -59,6 +61,8 @@ $("#player_number").on('change', function(){
 });
 $("#player_number + label").text(2 + "명");
 
+$(".zone").on('click',airport_move());
+
 
 function game_init() {
   var pc = Number( $("#player_number").val() );
@@ -73,7 +77,7 @@ function game_init() {
         <input type='color' id='pcl${i}' value='${player_list[i-1].color}'>
         <div class='steate'>
           자금 : <b id='pm${i}'>${player_list[i-1].money}만원</b>
-          보유도시 : <b id='pcity${i}'>${player_list[i-1].zone.length}개</b>
+          보유도시 : <b id='pcity${i}'>${player_list[i-1].zone}개</b>
         </div>
       </div>`
     );
@@ -157,7 +161,7 @@ function change_pcl() { // 플레이어가 자신의 말 색상을 변경할 경
 }
 
 
-function find_location(n) { // 플레이어 말이 표시 될 위치 또는 이동할 위치 찾기
+function find_location(n) { // 몇번째 zone클래스? 플레이어 말이 표시 될 위치 또는 이동할 위치 찾기
   var index = 0;
   $(".zone").each(function(idx,item){
     var num = Number( $(item).data("num") ); // zone클래스 태그의 data-num값
@@ -189,19 +193,27 @@ function welfare(gamer) { // 위치에 도착한 플레이어가 복지기금 �
 }
 
 function airport(gamer) { // 플레이어가 원하는곳으로 이동(마우스클릭)
-
+  alert("가고싶은 위치를 선택하세요!");
+  탑승객 = gamer.num; // 인천공항에 도착한 플레이어 번호저장, 
+                     //탑승객변수에 있는 번호만 이용가능
 }
+
 function fundpayment(gamer) { // 플레이어의 돈을 복지기금으로 지불(20만원)
   alert(`복지기금에 20만원 지불했습니다.`)
   gamer.money -= 20;
   fund += 20;
   $("#pm" + gamer.num).text(gamer.money+"만원");
 }
+
 function island(gamer) { // 3턴동안 탈출 불가능
-
+ gamer.drrft_turn = 3;
+ island.push(gamer.num);
 }
-function complete(gamer) { // 출발지를 도착하거나 통과하면 20만원 보너스
 
+function complete(gamer) { // 출발지를 도착하거나 통과하면 20만원 보너스
+  alert(`출발지도착 20만원 받았습니다.`)
+  gamer.money += 20;
+  $("#pm" + gamer.num).text(gamer.money + "만원");
 }
 
 
